@@ -1,3 +1,50 @@
+#container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#cellulare {
+  border: 2px solid rgb(0, 0, 0);
+  width: 18rem;
+  height: 35rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 5px #999898;
+}
+
+#display {
+  width: 100%;
+  font-size: 3rem;
+  height: 12rem;
+  text-align: right;
+  overflow: hidden;
+  border-radius: 2rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: inset 0px 2px 6px 5px #e0e0e0;
+}
+
+button {
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  background-color: lightgray;
+  color: rgb(59, 58, 58);
+  border: none;
+  box-shadow: 0px 2px 8px 5px #afafaf;
+  transition: all 0.7s;
+}
+
+.tastiera {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 
 /*# sourceMappingURL=style.css.map */
