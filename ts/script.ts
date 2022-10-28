@@ -20,15 +20,17 @@ class Smartphone implements ISmartphone {
     this.carica += unaRicarica;
   }
   chiamata(minutiDurata: number): void {
-    // if (minutiDurata !== NaN) {
-    console.log("Hai fatto una chiamata da :" + minutiDurata + "minuti");
-    this.minutiChimata += minutiDurata;
-    this.carica = this.carica - this.minutiChimata * this.costoMinutiChimata;
-    this.numeroChiamate++;
-    this.minutiChimata = 0;
-    // } else {
-    //   alert("Devi inserire un numero!!");
-    // }
+    if (this.carica === 0) {
+      alert("Non hai credito per le chiamate! Fai una ricarica");
+    } else if (minutiDurata !== NaN) {
+      console.log("Hai fatto una chiamata da :" + minutiDurata + "minuti");
+      this.minutiChimata += minutiDurata;
+      this.carica = this.carica - this.minutiChimata * this.costoMinutiChimata;
+      this.numeroChiamate++;
+      this.minutiChimata = 0;
+    } else {
+      alert("Devi inserire un numero!!");
+    }
   }
   numero404(): number {
     return this.carica;
@@ -61,7 +63,7 @@ class Smartphone implements ISmartphone {
 // console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
 // console.log("Numero chimate : " + ut1.getNumeroChiamate());
 
-let utente1 = new Smartphone(0, 0);
+let utente1 = new Smartphone(0);
 
 window.addEventListener("DOMContentLoaded", () => {
   let display = <HTMLInputElement>document.querySelector("#display");
