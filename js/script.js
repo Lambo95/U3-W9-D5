@@ -31,21 +31,31 @@ class Smartphone {
         this.numeroChiamate = 0;
     }
 }
-let ut1 = new Smartphone(12);
-console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
-ut1.ricarica(10);
-console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
-ut1.chiamata(10);
-console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
-console.log("Numero chimate : " + ut1.getNumeroChiamate());
-ut1.chiamata(10);
-console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
-console.log("Numero chimate : " + ut1.getNumeroChiamate());
-ut1.chiamata(10);
-console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
-console.log("Numero chimate : " + ut1.getNumeroChiamate());
+// let ut1 = new Smartphone(12);
+// console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
+// ut1.ricarica(10);
+// console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
+// ut1.chiamata(10);
+// console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
+// console.log("Numero chimate : " + ut1.getNumeroChiamate());
+// ut1.chiamata(10);
+// console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
+// console.log("Numero chimate : " + ut1.getNumeroChiamate());
+// ut1.chiamata(10);
+// console.log("Questo è il tuo attuale saldo " + ut1.numero404() + "€");
+// console.log("Numero chimate : " + ut1.getNumeroChiamate());
+let utente1 = new Smartphone(0, 0);
 window.addEventListener("DOMContentLoaded", () => {
     let display = document.querySelector("#display");
+    //   function creaSmartphone(): Smartphone { {
+    //     let credito = document.querySelector("#credito") as HTMLInputElement;
+    //     let utente1 = new Smartphone(Number(credito.value));
+    //     return utente1
+    //   }
+    // function createUt(){
+    //   let btnCreate = document.querySelector("#creaSmartphone");
+    //   btnCreate?.addEventListener("click", creaSmartphone())
+    // }
     function tasti() {
         let button = document.querySelectorAll("button");
         button.forEach((ele) => {
@@ -74,18 +84,18 @@ window.addEventListener("DOMContentLoaded", () => {
             if (display.value !== "404" && display.value !== "0101") {
                 let minutiChimataUt = prompt("Quanto dura la chiamata?");
                 let numMinutiChimataUt = Number(minutiChimataUt);
-                ut1.chiamata(numMinutiChimataUt);
-                console.log(ut1.numero404());
+                utente1.chiamata(numMinutiChimataUt);
+                console.log(utente1.numero404());
             }
             else if (display.value === "404") {
-                let creditoResiduo = ut1.numero404();
+                let creditoResiduo = utente1.numero404();
                 alert("Il tuo saldo è di " + creditoResiduo + "€");
             }
             else if (display.value === "0101") {
                 let ricaricaNum = prompt("Quanto vuoi ricaricare?");
                 let ricaricaTel = Number(ricaricaNum);
-                ut1.ricarica(ricaricaTel);
-                console.log(ut1.numero404());
+                utente1.ricarica(ricaricaTel);
+                console.log(utente1.numero404());
             }
         });
     }
@@ -93,14 +103,14 @@ window.addEventListener("DOMContentLoaded", () => {
     function showCall() {
         let showCallBtn = document.querySelector(".showCall");
         showCallBtn === null || showCallBtn === void 0 ? void 0 : showCallBtn.addEventListener("click", () => {
-            alert("Hai fatto " + ut1.getNumeroChiamate() + " chiamate");
+            alert("Hai fatto " + utente1.getNumeroChiamate() + " chiamate");
         });
     }
     showCall();
     function deleteCallList() {
         let deleteCallList = document.querySelector(".deleteCall");
         deleteCallList === null || deleteCallList === void 0 ? void 0 : deleteCallList.addEventListener("click", () => {
-            ut1.azzeraChiamate();
+            utente1.azzeraChiamate();
             alert("Hai calcellato la cronologia chiamate!");
         });
     }
