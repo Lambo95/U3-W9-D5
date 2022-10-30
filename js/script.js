@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let chimataButton = document.querySelector(".call-start");
         chimataButton === null || chimataButton === void 0 ? void 0 : chimataButton.addEventListener("click", () => {
             if (display.value !== "404" && display.value !== "0101") {
-                let minutiChimataUt = prompt("Quanto dura la chiamata?");
+                let minutiChimataUt = prompt("Quanti minuti dura la chiamata?");
                 let numMinutiChimataUt = Number(minutiChimataUt);
                 utente1.chiamata(numMinutiChimataUt);
                 console.log(utente1.numero404());
