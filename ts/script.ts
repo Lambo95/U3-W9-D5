@@ -15,14 +15,18 @@ class Smartphone implements ISmartphone {
     this.carica = carica;
   }
   ricarica(unaRicarica: number): void {
-    console.log("Hai fatto una ricarica da " + unaRicarica + "€");
-
-    this.carica += unaRicarica;
+    if (isNaN(unaRicarica)) {
+      alert("Devi inserire un numero!");
+      this.carica = this.carica;
+    } else {
+      alert("Hai fatto una ricarica da " + unaRicarica + "€");
+      this.carica += unaRicarica;
+    }
   }
   chiamata(minutiDurata: number): void {
     if (this.carica === 0) {
-      alert("Non hai credito per le chiamate! Fai una ricarica");
-    } else if (minutiDurata !== NaN) {
+      alert("Non hai credito per le chiamate! Fai una ricarica! Chiama il 0101");
+    } else if (!isNaN(minutiDurata)) {
       console.log("Hai fatto una chiamata da :" + minutiDurata + "minuti");
       this.minutiChimata += minutiDurata;
       this.carica = this.carica - this.minutiChimata * this.costoMinutiChimata;

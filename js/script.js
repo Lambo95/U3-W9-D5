@@ -7,14 +7,20 @@ class Smartphone {
         this.carica = carica;
     }
     ricarica(unaRicarica) {
-        console.log("Hai fatto una ricarica da " + unaRicarica + "€");
-        this.carica += unaRicarica;
+        if (isNaN(unaRicarica)) {
+            alert("Devi inserire un numero!");
+            this.carica = this.carica;
+        }
+        else {
+            alert("Hai fatto una ricarica da " + unaRicarica + "€");
+            this.carica += unaRicarica;
+        }
     }
     chiamata(minutiDurata) {
         if (this.carica === 0) {
-            alert("Non hai credito per le chiamate! Fai una ricarica");
+            alert("Non hai credito per le chiamate! Fai una ricarica! Chiama il 0101");
         }
-        else if (minutiDurata !== NaN) {
+        else if (!isNaN(minutiDurata)) {
             console.log("Hai fatto una chiamata da :" + minutiDurata + "minuti");
             this.minutiChimata += minutiDurata;
             this.carica = this.carica - this.minutiChimata * this.costoMinutiChimata;
